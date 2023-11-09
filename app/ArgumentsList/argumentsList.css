@@ -3,6 +3,7 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+  background-color: #fff1f6;
 }
 
 /* .container {
@@ -36,8 +37,7 @@ body {
   width: 450px;
   height: 550px;
   border-radius: 30px;
-  /* background-color: #ffe5f8; */
-  background-color: #f067d0;
+  background-color: #d7aefb;
   padding: 30px 50px;
 
   box-shadow: -10px -10px 15px rgba(255, 255, 255, 0.8),
@@ -51,6 +51,11 @@ body {
 
   border-radius: 5px;
   outline: none;
+
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2),
+    -5px -5px 10px rgba(255, 255, 255, 0.1),
+    inset 2px 2px 4px rgba(0, 0, 0, 0.1),
+    inset -2px -2px 4px rgba(255, 255, 255, 0.2);
 }
 
 .btn {
@@ -58,7 +63,7 @@ body {
   padding: 7px 15px;
   border: none;
   border-radius: 5px;
-  background: linear-gradient(135deg, #667eea, #764ba2);
+  background: linear-gradient(135deg, #6a44d1, #8954a8);
   color: white;
   font-size: 16px;
   margin-left: 17px;
@@ -73,17 +78,21 @@ body {
 }
 
 .btn:hover {
-  background: linear-gradient(135deg, #764ba2, #667eea);
+  background: linear-gradient(135deg, #8954a8, #6a44d1);
 }
 
 .note {
-  background-color: red;
+  background-color: #e077ff;
+  color: #181818;
   width: 250px;
   padding: 7px 15px;
-
   border-radius: 5px;
-}
 
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2),
+    -5px -5px 10px rgba(255, 255, 255, 0.1),
+    inset 2px 2px 4px rgba(0, 0, 0, 0.1),
+    inset -2px -2px 4px rgba(255, 255, 255, 0.2);
+}
 .notes ul {
   list-style: none;
   padding: 0;
@@ -93,26 +102,22 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 10px; /* Adjust the margin as needed */
+  margin-bottom: 10px;
 }
 
 .note {
   flex: 1; /* Takes up available space */
-  margin-right: 10px; /* Adjust the margin as needed */
+  margin-right: 10px;
 }
 
 button {
-  background: linear-gradient(135deg, #667eea, #764ba2);
+  background: linear-gradient(135deg, #6a44d1, #8954a8);
   color: #fff;
   border: none;
   padding: 8px 12px;
   border-radius: 5px;
   cursor: pointer;
-
-  /* background: linear-gradient(135deg, #667eea, #764ba2); */
-
   transition: background 0.3s ease;
-
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2),
     -5px -5px 10px rgba(255, 255, 255, 0.1),
     inset 2px 2px 4px rgba(0, 0, 0, 0.1),
@@ -125,9 +130,8 @@ button:hover {
 
 .trash,
 .paste {
-  vertical-align: middle; /* Align icons vertically in the button */
+  vertical-align: middle;
   margin: 5px;
-  /* Adjust the margin as needed */
 }
 
 .paste {

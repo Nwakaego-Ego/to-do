@@ -30,13 +30,13 @@ function ArgumentsLength() {
 
   return (
     <div className="container">
-      <h1 className="text-gray-500 p-4 justify-center ">
+      <h1 className="text-gray-500 font-bold p-4 justify-center ">
         Argument Length Counter
       </h1>
       <div>
         <input
           type="text"
-          placeholder="Enter an argument"
+          placeholder="Enter a note...."
           value={inputValue}
           onChange={(e) => setInputValue(e.target.value)}
           className="text-input"
@@ -46,16 +46,15 @@ function ArgumentsLength() {
           Note
         </button>
       </div>
-      <p className="text-gray-500 p-4">Number of Notes: {argumentCount}</p>
+      <p className="text-gray-500 font-bold p-4">
+        Number of Notes: {argumentCount}
+      </p>
       <div className="notes">
         <ul>
           {argumentsList.map((argument, index) => (
             <li key={index}>
               <span className="note">{argument}</span>
-              <button
-                onClick={() => handleDelete(index)}
-                // className="bg-blue-500 hover-bg-blue-600 text-white font-semibold py-2 px-4 rounded shadow-md"
-              >
+              <button onClick={() => handleDelete(index)}>
                 <FaTrash className="trash" />
               </button>
               <button
@@ -65,7 +64,6 @@ function ArgumentsLength() {
                     handleUpdate(index, newValue);
                   }
                 }}
-                // className="bg-blue-500 hover-bg-blue-600 text-white font-semibold py-2 px-4 rounded shadow-md"
               >
                 <FaPaste className="paste" />
               </button>
