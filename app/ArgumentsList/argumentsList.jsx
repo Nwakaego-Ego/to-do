@@ -30,47 +30,49 @@ function ArgumentsLength() {
 
   return (
     <div className="container">
-      <h1>Argument Length Counter</h1>
+      <h1 className="text-gray-500 p-4 justify-center ">
+        Argument Length Counter
+      </h1>
       <div>
         <input
           type="text"
           placeholder="Enter an argument"
           value={inputValue}
           onChange={(e) => setInputValue(e.target.value)}
+          className="text-input"
         />
 
-        <button
-          onClick={handleAddArgument}
-          className="bg-blue-500 hover-bg-blue-600 text-white font-semibold py-2 px-4 rounded shadow-md"
-        >
-          Add Note
+        <button onClick={handleAddArgument} className="btn">
+          Note
         </button>
       </div>
-      <p>Number of Notes: {argumentCount}</p>
-      <ul>
-        {argumentsList.map((argument, index) => (
-          <li key={index}>
-            {argument}{" "}
-            <button
-              onClick={() => handleDelete(index)}
-              // className="bg-blue-500 hover-bg-blue-600 text-white font-semibold py-2 px-4 rounded shadow-md"
-            >
-              <FaTrash />
-            </button>
-            <button
-              onClick={() => {
-                const newValue = prompt("Enter a new value for the argument");
-                if (newValue !== null) {
-                  handleUpdate(index, newValue);
-                }
-              }}
-              // className="bg-blue-500 hover-bg-blue-600 text-white font-semibold py-2 px-4 rounded shadow-md"
-            >
-              <FaPaste />
-            </button>
-          </li>
-        ))}
-      </ul>
+      <p className="text-gray-500 p-4">Number of Notes: {argumentCount}</p>
+      <div className="notes">
+        <ul>
+          {argumentsList.map((argument, index) => (
+            <li key={index}>
+              <span className="note">{argument}</span>
+              <button
+                onClick={() => handleDelete(index)}
+                // className="bg-blue-500 hover-bg-blue-600 text-white font-semibold py-2 px-4 rounded shadow-md"
+              >
+                <FaTrash className="trash" />
+              </button>
+              <button
+                onClick={() => {
+                  const newValue = prompt("Enter a new value for the argument");
+                  if (newValue !== null) {
+                    handleUpdate(index, newValue);
+                  }
+                }}
+                // className="bg-blue-500 hover-bg-blue-600 text-white font-semibold py-2 px-4 rounded shadow-md"
+              >
+                <FaPaste className="paste" />
+              </button>
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 }
