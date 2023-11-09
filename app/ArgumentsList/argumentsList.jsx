@@ -1,6 +1,8 @@
 "use client";
 
 import React, { useState } from "react";
+import { FaPaste, FaTrash } from "react-icons/fa";
+import "./argumentsList.css";
 
 function ArgumentsLength() {
   const [argumentCount, setArgumentCount] = useState(0);
@@ -16,7 +18,7 @@ function ArgumentsLength() {
   };
 
   function handleDelete(index) {
-    const newList = argumentsList.filter((_, i) => i !== index);
+    const newList = argumentsList.filter((_, list) => list !== index);
     setArgumentsList(newList);
   }
 
@@ -27,7 +29,7 @@ function ArgumentsLength() {
   }
 
   return (
-    <div>
+    <div className="container">
       <h1>Argument Length Counter</h1>
       <div>
         <input
@@ -41,19 +43,19 @@ function ArgumentsLength() {
           onClick={handleAddArgument}
           className="bg-blue-500 hover-bg-blue-600 text-white font-semibold py-2 px-4 rounded shadow-md"
         >
-          Add Argument
+          Add Note
         </button>
       </div>
-      <p>Number of Arguments: {argumentCount}</p>
+      <p>Number of Notes: {argumentCount}</p>
       <ul>
         {argumentsList.map((argument, index) => (
           <li key={index}>
             {argument}{" "}
             <button
               onClick={() => handleDelete(index)}
-              className="bg-blue-500 hover-bg-blue-600 text-white font-semibold py-2 px-4 rounded shadow-md"
+              // className="bg-blue-500 hover-bg-blue-600 text-white font-semibold py-2 px-4 rounded shadow-md"
             >
-              Delete
+              <FaTrash />
             </button>
             <button
               onClick={() => {
@@ -62,9 +64,9 @@ function ArgumentsLength() {
                   handleUpdate(index, newValue);
                 }
               }}
-              className="bg-blue-500 hover-bg-blue-600 text-white font-semibold py-2 px-4 rounded shadow-md"
+              // className="bg-blue-500 hover-bg-blue-600 text-white font-semibold py-2 px-4 rounded shadow-md"
             >
-              Update
+              <FaPaste />
             </button>
           </li>
         ))}
